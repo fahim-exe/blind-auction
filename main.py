@@ -6,14 +6,33 @@ import auction as Auc
 #4-if yes , repeat 1 and 2
 #5-if no, check max bidder
 #6-print max bidders name and amount as winner
+print("Welcome to the silent auction program.")
+name = input("What is your name: ")
+bid = int(input("What's your bid: $"))
+bidders = Auc.bidders_dict(name, bid)
+print()
+chk_new = input("Are there any other bidders? Type 'yes' or 'no' :")
+
+if chk_new.lower()=="yes":
+     while True: 
+
+        if chk_new.lower()=="yes":
+            print()
+            name = input("What is your name: ")
+            bid = int(input("What's your bid: $"))
+        
+            bidders[name] = bid
+            
+            print()
+            chk_new = input("Are there any other bidders? Type 'yes' or 'no' :")
+            
+        if chk_new.lower() == "no":
+                break
 
 
-while True: 
 
-    print("Welcome to the silent auction program.")
-    name = input("What is your name: ")
-    bid = int(input("What's your bid: $"))
+print(bidders)
+print(Auc.winner(bidders))
 
-    chk_new = input("Are there any other bidders? Type 'yes' or 'no' :")
-    if chk_new.lower()=="yes":
-        pass
+
+
